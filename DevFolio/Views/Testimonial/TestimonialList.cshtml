@@ -1,0 +1,51 @@
+﻿﻿@model List<DevFolio.Models.TblTestimonial>
+@{
+    ViewBag.Title = "TestimonialList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Referans Listesi</h2>
+
+<div class="container">
+    <a href="/Testimonial/CreateTestimonial/" class="btn btn-info">Yeni Referans</a>
+    <br />
+    <br />
+    <table class="table table-bordered">
+        <tr class="table-secondary">
+            <th>#</th>
+            <th>Ad Soyad</th>
+            <th>Açıklama</th>
+            <th>Resim</th>
+            <th>Durum</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            string durum = "";
+            if (item.Status == false)
+            {
+                durum = "bg-danger";
+            }
+            else
+            {
+                durum = "bg-secondary";
+            }
+
+            <tr>
+                <td>@item.Testimonialld</td>
+                <td>@item.NameSurname</td>
+                <td>@item.Description</td>
+                <td>@item.ImageUrl</td>
+                <td><span class="badge @durum" style="color:white">@item.Status</span></td>
+                
+                <td><a href="/Testimonial/DeleteTestimonial/@item.Testimonialld" class="btn btn-warning">Sil</a></td>
+                <td><a href="/Testimonial/UpdateTestimonial/@item.Testimonialld" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+
+
+    </table>
+    <a href="/Testimonial/CreateTestimonial/" class="btn btn-info">Yeni Referans Yorumu</a>
+</div>

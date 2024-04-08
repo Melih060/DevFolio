@@ -1,0 +1,46 @@
+﻿﻿@model List < DevFolio.Models.TblAdress>
+@{
+    ViewBag.Title = "AddressList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Adres Bilgisi</h2>
+
+<div class="container">
+    @if (ViewBag.addressCount < 1)
+    { 
+    <a href="/Address/CreateAddress/"class="btn btn-info">Yeni Adres</a>
+    }
+ 
+    <br />
+    <br />
+    <table class="table table-bordered">
+        <tr class="table-secondary">
+            <th>#</th>
+            <th>Açıklama</th>
+            <th>Adres</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+   
+           
+    <tr>
+        <td>@item.AdressID</td>
+        <td>@item.Description</td>
+        <td>@item.Location</td>
+        <td>@item.Phonenumber</td>
+        <td>@item.Email</td>
+
+        <td><a href="/Address/DeleteAddress/@item.AdressID" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Address/UpdateAddress/@item.AdressID" class="btn btn-success">Güncelle</a></td>
+    </tr>
+        }
+
+
+    </table>
+</div>

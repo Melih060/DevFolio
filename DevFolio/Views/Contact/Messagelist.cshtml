@@ -1,0 +1,54 @@
+﻿﻿@model List<DevFolio.Models.TblContact>
+@{
+    ViewBag.Title = "MessageList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    string durum = "";
+    string deger = "";
+ }
+
+
+<h2>Mesaj Listesi</h2>
+
+<div class="container">
+
+    <br />
+    <table class="table table-bordered">
+        <tr class="table-secondary">
+            <th>#</th>
+            <th>Gönderen</th>
+            <th>E-Mail</th>
+            <th>Konu</th>
+            <th>Tarih</th>
+            <th>Durum</th>
+            <th>Mesajı Aç</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            
+            if (item.IsRead == false)
+            {
+                durum = "bg-danger";
+                deger = "Okunmadı";
+            }
+            else
+            {
+                durum = "bg-secondary";
+                deger = "Okundu";
+            }
+
+            <tr>
+                <td>@item.ContactID</td>
+                <td>@item.NameSurname</td>
+                <td>@item.Email</td>
+                <td>@item.Subject</td>
+                <td>@(((DateTime)item.SendMessageDate).ToString("dd.MM.yy"))</td>
+                <td><span class="badge @durum" style="color:white">@deger</span></td>
+                <td><a href="/Contact/ReadMessage/@item.ContactID" class="btn btn-success">Mesaj Detay</a></td>
+
+            </tr>
+        }
+
+
+    </table>
+</div>

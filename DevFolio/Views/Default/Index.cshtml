@@ -1,0 +1,225 @@
+﻿﻿
+@{
+    Layout = null;
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+@Html.Action("PartialHead", "Default")
+
+<body id="page-top">
+
+    <!--/ Nav Star /-->
+    @Html.Action("PartialNavbar", "Default")
+    <!--/ Nav End /-->
+    <!--/ Intro Skew Star /-->
+    @Html.Action("PartialFeature", "Default")
+    <!--/ Intro Skew End /-->
+
+    <section id="about" class="about-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box-shadow-full">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-5">
+                                        <div class="about-img">
+                                            <img src="~/Templates/devfolio-master/img/benn.jpeg" class="img-fluid rounded b-shadow-a" alt="">
+                                        </div>
+
+                                    </div>
+                                    @Html.Action("PartialProfile", "Default")
+                                </div>
+                                    @Html.Action("PartialSkill", "Default")
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.Action("PartialAbout", "Default")
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--/ Section Services Star /-->
+    <section id="service" class="services-mf route">
+        <div class="container">
+            <div class="row-no-gutters">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            Hizmetler
+                        </h3>
+
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                @Html.Action("PartialService", "Default")
+            </div>
+        </div>
+    </section>
+    <!--/ Section Services End /-->
+
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(/Templates/devfolio-master//Templates/devfolio-master/img/counters-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                    <div class="counter-box">
+                        <div class="counter-ico">
+                            <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
+                        </div>
+                        <div class="counter-num">
+                            <p class="counter">18</p>
+                            <span class="counter-text">TAMAMLANAN PROJELER</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="counter-box pt-4 pt-md-0">
+                        <div class="counter-ico">
+                            <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
+                        </div>
+                        <div class="counter-num">
+                            <p class="counter">2</p>
+                            <span class="counter-text">DENEYİM SÜRESİ(YIL)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="counter-box pt-4 pt-md-0">
+                        <div class="counter-ico">
+                            <span class="ico-circle"><i class="ion-ios-people"></i></span>
+                        </div>
+                        <div class="counter-num">
+                            <p class="counter">18</p>
+                            <span class="counter-text">TOPLAM MÜŞTERİ SAYISI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="counter-box pt-4 pt-md-0">
+                        <div class="counter-ico">
+                            <span class="ico-circle"><i class="ion-ribbon-a"></i></span>
+                        </div>
+                        <div class="counter-num">
+                            <p class="counter">36</p>
+                            <span class="counter-text">TOPLAM SERTİFİKA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ Section Portfolio Star /-->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            PROJELERİM
+                        </h3>
+                        <p class="subtitle-a">
+                            Geliştirmiş olduğum proje örnekleri
+                        </p>
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @Html.Action("PartialProject", "Default")
+
+            </div>
+        </div>
+    </section>
+    <!--/ Section Portfolio End /-->
+    <!--/ Section Testimonials Star /-->
+    <div class="testimonials paralax-mf bg-image" style="background-image: url(/Templates/devfolio-master/img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="testimonial-mf" class="owl-carousel owl-theme">
+                        @Html.Action("PartialTestimonial", "Default")
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/ Section Contact-Footer Star /-->
+    <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(/Templates/devfolio-master/img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="contact-mf">
+                        <div id="contact" class="box-shadow-full">
+                            <div class="row">
+                                @Html.Action("PartialContact", "Default")
+                                <div class="col-md-6">
+                                    <div class="title-box-2 pt-4 pt-md-0">
+                                        <h5 class="title-left">
+                                            İletişim
+                                        </h5>
+                                    </div>
+                                    @Html.Action("PartialAddress", "Default")
+                                    <div class="socials">
+                                        @Html.Action("PartialSocialMedia", "Default")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="copyright-box">
+                            <p class="copyright">&copy; Copyright <strong>Melih Zengin</strong>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!--/ Section Contact-footer End /-->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- JavaScript Libraries -->
+    <script src="~/Templates/devfolio-master/lib/jquery/jquery.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/popper/popper.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/easing/easing.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/counterup/jquery.waypoints.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/counterup/jquery.counterup.js"></script>
+    <script src="~/Templates/devfolio-master/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/typed/typed.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="~/Templates/devfolio-master/contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="~/Templates/devfolio-master/js/main.js"></script>
+
+</body>
+</html>
